@@ -8,7 +8,7 @@
 	try{
 		$dsn = "mysql:dbname=my_sn;host=localhost";
 		$user="root";
-		$password="technologka180";
+		$password="";
 	    $conn = new PDO($dsn,$user,$password);}
 	catch (PDOException $e){
 		echo 'Connection failed: ' . $e->getMessage();
@@ -20,7 +20,7 @@
 	
 	/* Checking whether the user has already signed up and can proceed logging in */
 	$query = "SELECT user_id, password FROM users WHERE email=:email";
-    $prep = $conn->prepare($query);
+        $prep = $conn->prepare($query);
 	$prep->bindParam(':email', $email);
 	$select = $prep->execute();
 	$result = $prep->fetchObject();
