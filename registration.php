@@ -4,7 +4,7 @@
 	try{
 		$dsn = "mysql:dbname=my_sn;host=localhost";
 		$user="root";
-		$password="technologka180";
+		$password="";
 	    $conn = new PDO($dsn,$user,$password);}
 	catch (PDOException $e){
 		echo 'Connection failed: ' . $e->getMessage();
@@ -18,7 +18,7 @@
 	
 	/* Checking whether the submitted email address has been already used to sign up */
 	$query = "SELECT user_id FROM users WHERE email=:email";
-    $prep = $conn->prepare($query);
+        $prep = $conn->prepare($query);
 	$prep->bindParam(':email', $email);
 	$select = $prep->execute();
 	$result = $prep->fetch();
@@ -32,7 +32,7 @@
 	
 	/* Making the actual user registration */
 	$query = "INSERT INTO users (name,username,password,email) VALUES (:name, :username, :h_password, :email)";
-    $prep = $conn->prepare($query);
+        $prep = $conn->prepare($query);
 	$prep->bindParam(':name', $name);
 	$prep->bindParam(':username', $username);
 	$prep->bindParam(':h_password', $h_password);
