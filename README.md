@@ -1,5 +1,5 @@
 # Nano-Social-Network
-This is a Nano Social Network - very small scale simple functionality social network. <br> 
+This is a Nano Social Network - very small scale simple functionality social network. It is written in PLAIN PHP! <br> 
 I have just started creating it on 19 March 2017, so it is way too far from being ready. <br>
 The scripts "sign_up.php" and "registration.php" form a sign up system of the network. <br>
 The scripts "log_in.php", "entrance.php", and "log_out.php" form a log in/log out system of the network. <br>
